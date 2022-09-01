@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct array{
+    int arr[10];
+    int size;
+    int length;
+};
+void display(struct array A){
+    int i;
+    printf("elements are : ");
+    for(i = 0; i < A.length; i++){
+        printf("%d ",A.arr[i]);
+    }
+    printf("\n");
+}
+void min(struct array A){
+    int min,i;
+    min = A.arr[0];
+    for(i = 1; i < A.length;i++){
+        if(A.arr[i] < min){
+            min = A.arr[i];
+        }
+    }
+    printf("min result : %d",min);
+
+}
+int main(){
+    struct array A = {{1,2,3,4,5,6,7,80,9,10},10,10};
+    display(A);
+    min(A);
+
+    return 0;
+}
